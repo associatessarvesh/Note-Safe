@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notesafe Privacy Policy</title>
+<style>
+  :root{
+    --bg:#F6FBF8; --fg:#171D1B; --muted:#3F4945; --card:#FFFFFF;
+    --border:#DBE5E0; --accent:#146A5B; --accent-bg:#A6F2DD; --link:#0E5346;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0E1512; --fg:#DDE4E0; --muted:#BFC9C4; --card:#151D1A;
+      --border:#3F4945; --accent:#8AD5C1; --accent-bg:#005143; --link:#8AD5C1;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:48px 24px 80px;}
+  header{display:flex; align-items:center; gap:14px; margin-bottom:8px;}
+  .badge{
+    width:44px; height:44px; border-radius:50%; background:var(--accent);
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .badge svg{width:26px; height:26px;}
+  h1{font-size:28px; margin:0;}
+  .updated{color:var(--muted); font-size:14px; margin:6px 0 32px;}
+  h2{font-size:19px; margin:36px 0 12px; color:var(--fg);}
+  p{margin:0 0 14px;}
+  ul{margin:0 0 14px; padding-left:22px;}
+  li{margin:0 0 8px;}
+  strong{color:var(--fg);}
+  a{color:var(--link);}
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:12px;
+    padding:20px 22px; margin:24px 0;
+  }
+  table{width:100%; border-collapse:collapse; margin:0 0 14px; font-size:15px;}
+  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); vertical-align:top;}
+  th{color:var(--muted); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.03em;}
+  code{
+    background:var(--accent-bg); color:var(--accent); padding:1px 6px;
+    border-radius:5px; font-size:0.92em;
+  }
+  footer{margin-top:48px; color:var(--muted); font-size:13px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="badge">
+      <svg viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#FFFFFF" d="M54,20 L79,31 L79,55 C79,73 68,85 54,92 C40,85 29,73 29,55 L29,31 Z" />
+        <path fill="#146A5B" d="M45,50 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0 Z" />
+        <path fill="#146A5B" d="M50,57 L58,57 L62,78 L46,78 Z" />
+      </svg>
+    </div>
+    <h1>Privacy Policy for Notesafe</h1>
+  </header>
+  <p class="updated">Last updated: July 6, 2026</p>
+
+  <p>This Privacy Policy describes how Notesafe ("the App", "we", "us") handles your information. Notesafe is designed around a simple principle: <strong>your notes never leave your device.</strong></p>
+
+  <div class="card">
+    <h2 style="margin-top:0;">Summary</h2>
+    <ul>
+      <li>Notesafe does not request Internet access. The app has no network permission at all.</li>
+      <li>All notes are stored locally on your device in an encrypted database (SQLCipher).</li>
+      <li>We do not collect, transmit, or have access to your notes, attachments, or any personal content.</li>
+      <li>We do not use analytics, advertising, or crash-reporting SDKs.</li>
+      <li>We do not have servers, and there is no Notesafe account or sign-in.</li>
+    </ul>
+  </div>
+
+  <h2>Information We Do Not Collect</h2>
+  <p>Because Notesafe has no Internet permission, we cannot and do not collect, transmit, or store any of the following on any server:</p>
+  <ul>
+    <li>Note titles, content, or attachments</li>
+    <li>Voice memos recorded within the app</li>
+    <li>Biometric data (fingerprint/face data never leaves the operating system's secure biometric APIs — Notesafe never sees or stores raw biometric information)</li>
+    <li>Usage analytics, device identifiers, or advertising IDs</li>
+  </ul>
+
+  <h2>Data Stored On Your Device</h2>
+  <ul>
+    <li><strong>Notes and attachments</strong> are stored in a local, encrypted (SQLCipher) database on your device.</li>
+    <li><strong>App lock</strong>: If you enable app lock, Notesafe uses Android's built-in Biometric/Device Credential APIs to verify your identity. Notesafe never receives or stores your fingerprint, face data, or device PIN — the operating system handles verification and only tells the app "authenticated" or "not authenticated."</li>
+    <li><strong>Exports/backups</strong>: If you choose to export or import notes, this happens only through a file picker you explicitly control (Android's Storage Access Framework). Notesafe does not upload this data anywhere; it is written to or read from a location you choose on your own device or your own cloud-storage app (e.g., if you pick a Google Drive-backed folder, that transfer is handled by your OS/file provider, not by Notesafe).</li>
+  </ul>
+
+  <h2>Permissions We Request</h2>
+  <table>
+    <tr><th>Permission</th><th>Why we request it</th></tr>
+    <tr><td><code>USE_BIOMETRIC</code></td><td>To let you lock the app with your fingerprint/face/device credential.</td></tr>
+    <tr><td><code>RECORD_AUDIO</code></td><td>Requested only at runtime, and only used if you record a voice-memo attachment (a premium feature). Audio is recorded straight to a local file attached to your note; it is never transmitted anywhere.</td></tr>
+  </table>
+  <p>Notesafe does <strong>not</strong> request the <code>INTERNET</code> permission, so no data can be sent off your device by the app.</p>
+
+  <h2>Purchases (Premium Features)</h2>
+  <p>Premium features (such as custom app icons and voice-memo attachments) are unlocked via <strong>Google Play Billing</strong>. Purchase processing is handled entirely by Google Play. Notesafe only receives a purchase/entitlement status from the Google Play Billing library to unlock features locally — we do not receive your payment details (card number, billing address, etc.). Google's handling of that information is governed by the <a href="https://play.google.com/about/play-terms/">Google Play Terms of Service</a> and <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>Notesafe does not knowingly collect any information from anyone, including children, because the app collects no information at all — everything stays on-device.</p>
+
+  <h2>Data Deletion</h2>
+  <p>Since all data lives only on your device, you are always in full control of it:</p>
+  <ul>
+    <li>Deleting a note or attachment in-app permanently removes it from the local encrypted database.</li>
+    <li>Uninstalling the app removes all locally stored notes and attachments (unless you previously exported a copy yourself).</li>
+  </ul>
+
+  <h2>Changes to This Policy</h2>
+  <p>If Notesafe's data practices change (for example, if a future version adds an optional cloud-sync feature), this policy will be updated before that feature ships, and the "Last updated" date above will change accordingly.</p>
+
+  <h2>Contact</h2>
+  <p>If you have questions about this Privacy Policy, contact: <strong>associates.sarvesh@gmail.com</strong></p>
+
+  <footer>Notesafe — encrypted, offline notes.</footer>
+</div>
+</body>
+</html>
